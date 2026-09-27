@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>高速流水码</title><link rel="stylesheet" href="app.css"></head>
+<body>
+<header><button id="back" aria-label="返回二维码工具">‹</button><strong>高速流水码</strong><span>Cimbar</span></header>
+<nav><button id="receiveTab" class="selected">扫描</button><button id="sendTab">创建</button></nav>
+<main>
+<section id="receive">
+ <div id="cameraBox"><video id="video" autoplay muted playsinline></video><div id="guide"></div><p id="cameraHint">对准另一部手机的彩色流水码<br>让四个定位角全部进入画面</p></div>
+ <div class="panel"><progress id="progress" max="1" value="0"></progress><p id="receiveStatus" role="status">正在加载离线解码器…</p><p id="speed" class="muted">手机之间直接传输，无需联网</p><div class="actions"><button id="cameraStart" disabled>开始扫描</button><button id="torch" hidden>补光灯</button><button id="reset" class="secondary">重新识别</button></div><label id="zoomLabel" hidden>缩放 <input id="zoom" type="range" step="0.1"></label><button id="save" hidden>保存到手机</button></div>
+</section>
+<section id="send" hidden>
+ <div class="panel"><button id="pick" disabled>选择手机文件</button><input id="browserFile" type="file" hidden><p id="fileInfo" class="muted">支持文件或文本，最大 16 MB</p><div id="textEntry"><textarea id="text" placeholder="也可以输入文本" rows="3"></textarea><button id="createText" class="secondary" disabled>创建文本流水码</button></div></div>
+ <div id="codeBox" hidden><canvas id="canvas" width="1024" height="1024"></canvas></div>
+ <div id="playControls" class="panel" hidden><div class="actions"><button id="play">开始播放</button><button id="enlarge" class="secondary">放大显示</button></div><label>播放速度 <output id="fpsLabel">15 帧/秒</output><input id="fps" type="range" min="5" max="30" step="1" value="15"></label><p id="sendStatus" class="muted">接收完成后停止播放；识别不稳时降低帧率。</p></div>
+ <p id="loadStatus" role="status" class="panel muted">正在加载离线编码器…</p>
+</section>
+</main>
+<footer>普通二维码仍按每码 500 字符拆分 · 彩色流水码用于高速文件传输</footer>
+<script src="app.js"></script><script src="cimbar_js.2026-08-21T2336.js"></script>
+</body></html>

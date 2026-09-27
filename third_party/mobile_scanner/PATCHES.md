@@ -1,0 +1,1 @@
+Vendored mobile_scanner 3.5.7 (BSD-3-Clause). Android preview aspect ratio uses Preview.resolutionInfo instead of ImageAnalysis.resolutionInfo. This fixes texture distortion when preview and analysis have different aspect ratios. Original source: https://github.com/juliansteenbakker/mobile_scanner/tree/v3.5.7
